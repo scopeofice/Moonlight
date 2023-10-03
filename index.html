@@ -24,6 +24,13 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+Vl5z5m5O7Ii5tj9f/knW6x9v/1nF9w5z5d71O5paqQ5w5op5j"
       crossorigin="anonymous"
     ></script>
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector('header ul');
+    menu.classList.toggle('active');
+  }
+</script>
+
   </head>
   <body>
     <img id="custom-cursor" src="Images/cursor1.png" alt="Custom Cursor" />
@@ -46,6 +53,7 @@
         </svg>
         Moonlight
       </a>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
       <ul>
         <li><a href="#" class="active">Home</a></li>
         <li><a href="#">Login</a></li>
