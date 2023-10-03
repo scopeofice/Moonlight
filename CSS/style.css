@@ -221,10 +221,10 @@ video::-webkit-media-controls {
     background-color: #fff;
     animation: slide 5s ease-in-out ;
   }
-  .lottie-container {
+  /* .lottie-container {
     display: inline-block;
     transition: transform 0.3s ease-in-out;
-}
+} */
 
 .lottie-container:hover {
     transform: scale(1.2); /* Increase the size on hover (adjust the scale factor as needed) */
@@ -292,3 +292,20 @@ video::-webkit-media-controls {
       font-size: 20px;
     }
   }
+  .text-and-lottie {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.lottie-container {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .text-and-lottie {
+        grid-template-columns: 1fr 1fr;
+    }
+}
