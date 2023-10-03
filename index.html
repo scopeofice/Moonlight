@@ -7,33 +7,9 @@
     <link rel="stylesheet" type="text/css" href="CSS/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <!-- Add Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Add Bootstrap JavaScript (Popper.js and Bootstrap JS) -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+Vl5z5m5O7Ii5tj9f/knW6x9v/1nF9w5z5d71O5paqQ5w5op5j"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+Vl5z5m5O7Ii5tj9f/knW6x9v/1nF9w5z5d71O5paqQ5w5op5j"
-      crossorigin="anonymous"
-    ></script>
-<script>
-  function toggleMenu() {
-    const menu = document.querySelector('header ul');
-    menu.classList.toggle('active');
-  }
-</script>
-
   </head>
   <body>
-    <img id="custom-cursor" src="Images/cursor1.png" alt="Custom Cursor" />
+    <img id="custom-cursor" src="Images/cursor1.png" alt="Custom Cursor">
     <header id="header">
       <a href="#" class="logo">
         <svg
@@ -53,7 +29,6 @@
         </svg>
         Moonlight
       </a>
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
       <ul>
         <li><a href="#" class="active">Home</a></li>
         <li><a href="#">Login</a></li>
@@ -62,79 +37,51 @@
       </ul>
     </header>
     <section>
-      <img src="Images/StarsSky.png" id="stars" class="img-fluid" />
-      <img src="Images/Moonc.png" id="moon" class="img-fluid" />
-      <img
-        src="Images/Back_mountains_croped.png"
-        id="mountains_behind"
-        class="img-fluid"
-      />
+      <img src="Images/StarsSky.png" id="stars" />
+      <img src="Images/Moonc.png" id="moon" />
+      <img src="Images/Back_mountains_croped.png" id="mountains_behind" />
       <h2 id="text">Moon Light</h2>
       <a href="#sec" id="btn">Explore</a>
-      <img
-        src="Images/Land - front.png"
-        id="mountains_front"
-        class="img-fluid"
-      />
+      <img src="Images/Land - front.png" id="mountains_front" />
     </section>
-    <div class="container">
-      <div class="sec" id="sec">
-          <h2>Hy there</h2>
-          <hr />
-          <div class="content">
-              <div class="text-and-lottie">
-                  <pre>
-                      I'm Scopeofice, a multidisciplinary designer &
-                      developer with a focus on motion and user
-                      experience. My projects include UI/UX
-                      design, animation & illustration,and
-                      development.
-  
-                      This portfolio is a selection of my featured
-                      and most recent work. I also upload my
-                      projects on git <a href="https://github.com/scopeofice">@scopeofice</a>. I'm always
-                      interested in new projects, so feel free to 
-                      drop me a line.
-                  </pre>
-              </div>
-              <div class="lottie-container">
-                  <lottie-player
-                      src="Images\coder.json"
-                      background="transparent"
-                      speed="1"
-                      style="max-width: 100%; height: auto;"
-                      direction="1"
-                      mode="normal"
-                      loop
-                      autoplay
-                  ></lottie-player>
-              </div>
-          </div>
+    <div class="sec" id="sec">
+      <h2>Hy there</h2>
+      <hr />
+      <div class="content">
+        <pre>
+    I'm Scopeofice, a multidisciplinary designer &
+    developer with a focus on motion and user
+    experience. My projects include UI/UX
+    design, animation & illustration,and
+    development.
+    
+    This portfolio is a selection of my featured
+    and most recent work. I also upload my
+    projects on git <a href="https://github.com/scopeofice">@scopeofice</a>. I'm always
+    interested in new projects, so feel free to 
+    drop me a line.
+</pre>
+
+        <div class="lottie-container">
+          <lottie-player
+            src="Images\coder.json"
+            background="transparent"
+            speed="1"
+            style="width: 480px; height: 480px"
+            direction="1"
+            mode="normal"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+        <!-- <video controls width="35%" autoplay loop muted>
+    <source src="Images/CodeAir.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video> -->
       </div>
-  </div>
-  
+    </div>
+
     <script>
-
-        const menuIcon = document.querySelector('.menu-icon');
-        const nav = document.querySelector('header ul');
-
-        // Function to toggle the menu
-        function toggleMenu() {
-            nav.classList.toggle('active');
-        }
-
-        // Event listener for the menu icon click
-        menuIcon.addEventListener('click', toggleMenu);
-
-        // Close the menu when a menu item is clicked
-        const navLinks = document.querySelectorAll('header ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-            });
-        });
-
-
       let stars = document.getElementById("stars");
       let moon = document.getElementById("moon");
       let mountains_behind = document.getElementById("mountains_behind");
