@@ -114,6 +114,27 @@
   </div>
   
     <script>
+
+        const menuIcon = document.querySelector('.menu-icon');
+        const nav = document.querySelector('header ul');
+
+        // Function to toggle the menu
+        function toggleMenu() {
+            nav.classList.toggle('active');
+        }
+
+        // Event listener for the menu icon click
+        menuIcon.addEventListener('click', toggleMenu);
+
+        // Close the menu when a menu item is clicked
+        const navLinks = document.querySelectorAll('header ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+
       let stars = document.getElementById("stars");
       let moon = document.getElementById("moon");
       let mountains_behind = document.getElementById("mountains_behind");
