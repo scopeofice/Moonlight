@@ -12,7 +12,7 @@ body
     min-height: 115vh;
     background: linear-gradient(#2b1055,#7597de);
     overflow-x: hidden;
-    cursor: none;
+    
 }
 header
 {
@@ -25,7 +25,7 @@ header
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    cursor: none
+    
 }
 header .logo {
     display: inline-block;
@@ -43,7 +43,7 @@ header .logo {
     background-size: 100% 200%;
     background-position: 0 100%;
     transition: background-position 0.3s, color 0.3s;
-    cursor: none
+    
 }
 
 header .logo:hover {
@@ -68,7 +68,7 @@ header ul li a
     padding: 6px 15px;
     color: white;
     border-radius: 20px;
-    cursor: none
+    
 }
 header ul li a:hover,
 header ul li a.active
@@ -141,7 +141,7 @@ section img#mountains_behind
     font-size: 1.5em;
     overflow: hidden;
     transform: translateY(200px);
-    cursor: none
+    
 }
 .sec
 {
@@ -209,105 +209,5 @@ video::-webkit-media-controls {
 .lottie-container:hover {
     transform: scale(1.2); /* Increase the size on hover (adjust the scale factor as needed) */
 }
-#custom-cursor {
-    position: fixed;
-    width: 40px;
-    pointer-events: none; /* Allow interactions with elements behind the cursor */
-    z-index: 9999; /* Ensure it appears above other content */
-  }
-  a
-  {
-    cursor: none;
-  }
+
   
-  @media (max-width: 768px) {
-    body {
-        cursor: none;
-      }
-    header {
-      padding: 10px;
-    }
-  
-    /* Adjust font size and padding for logo on tablets */
-    header .logo {
-      font-size: 1.2em;
-      padding: 4px 10px;
-    }
-  
-    /* Modify navigation layout for tablets */
-    header ul {
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background: rgba(0, 0, 0, 0.7);
-      width: 100%;
-      padding: 0;
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform 0.3s ease-in-out;
-    }
-  
-    /* Show/hide navigation on tablet menu icon click */
-    header .menu-icon.active + ul {
-      transform: scaleY(1);
-    }
-  
-    header ul li {
-      margin: 0;
-      padding: 10px 0;
-    }
-  
-    header ul li a {
-      padding: 10px 20px;
-    }
-  }
-  
-  /* Mobile styles (adjust breakpoints as needed) */
-  @media (max-width: 480px) {
-    /* Further adjust styles for mobile devices */
-    body {
-        cursor: none;
-      }
-    header {
-      padding: 5px;
-    }
-  
-    /* Adjust font size and padding for logo on mobile */
-    header .logo {
-      font-size: 1em;
-      padding: 2px 6px;
-    }
-  
-    /* Additional mobile-specific adjustments for navigation */
-    header ul {
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background: rgba(0, 0, 0, 0.7);
-      width: 100%;
-      padding: 0;
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform 0.3s ease-in-out;
-    }
-  
-    /* Show/hide navigation on mobile menu icon click */
-    header .menu-icon.active + ul {
-      transform: scaleY(1);
-    }
-  
-    header ul li {
-      margin: 0;
-      padding: 10px 0;
-    }
-  
-    header ul li a {
-      padding: 10px 20px;
-    }
-  
-    /* Further mobile-specific adjustments can be made here */
-  }
