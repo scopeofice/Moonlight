@@ -111,14 +111,14 @@ html,body{
     cursor: pointer;
     background: linear-gradient(135deg, #2b1055,#6289df);
     transition: all 0.3s ease;
-    transform: translateY(-100px);
+    transform: translateY(-140px);
   }
   form .field input[type="submit"]:active{
     transform: scale(0.95);
   }
   form .signup-link{
     color: #262626;
-    margin-top: -90px;
+    margin-top: -120px;
     text-align: center;
   }
   form .pass-link a,
@@ -132,6 +132,13 @@ html,body{
   }
   .footer {
     margin-top: 150px;
+  }
+  @media(max-width: 480px) {
+    .wrapper{
+        margin-top: 50px;
+        width: 80%;
+        /* height: 500px; */
+    }
   }
 
   
