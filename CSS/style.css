@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
 *
 {
     margin: 0;
@@ -39,9 +40,7 @@ header .logo {
     letter-spacing: 2px;
     padding: 6px 15px;
     border-radius: 20px;
-    /* background-color: rgba(255, 255, 255, 0.411); */
     background-color: #ccc;
-    /* background: linear-gradient(to bottom, transparent 0%, transparent 100%); */
     background-size: 100% 200%;
     background-position: 0 100%;
     transition: background-position 0.3s, color 0.3s;
@@ -113,6 +112,7 @@ section img
 }
 #stars{
     overflow-x: hidden;
+    z-index: -2;
     max-width: 100vw;
 }
 section img#moon
@@ -126,7 +126,7 @@ section img#mountains_front
 }
 section img#mountains_behind
 {
-    top: 200px;
+    top: 250px;
 }
 
 #text
@@ -178,6 +178,7 @@ section img#mountains_behind
     margin-top: 0;
     display: flex;
   align-items: center;
+  margin-bottom: 200px;
 }
 
 .container video {
@@ -228,13 +229,108 @@ a
     color: #7597de;
 }
 
+.footer {
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .social-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
 
+.social-icon__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+
+
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
   
 
-
-
-
-/* Your existing CSS styles */
 
 @media(max-width: 1070px) {
     header{
@@ -261,14 +357,14 @@ a
       }
       button#closeMenu {
         display: inline;
-        background-color: #ccc; /* Grey background color */
-        color: #fff; /* White text color */
+        background-color: #ccc; 
+        color: #fff;
         border: none;
-        padding: 5px 10px; /* Adjust padding as needed */
-        border-radius: 50%; /* Round the button */
+        padding: 5px 10px; 
+        border-radius: 50%;
         position: absolute;
-        top: 10px; /* Adjust top position to position it vertically */
-        right: 10px; /* Adjust right position to position it horizontally */
+        top: 10px; 
+        right: 10px; 
         cursor: pointer;
       }
 
@@ -280,10 +376,7 @@ a
         flex-direction: column;
         position: absolute;
         top: 0;
-
-        /* left: 0; */
         right: 0;
-        /* background-color: rgba(255, 255, 255, 0.8); */
         padding: 10px;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -303,7 +396,22 @@ a
         border-radius: 5px;
     }
     section {
-        padding: 50px; /* Reduce the padding */
+        padding: 50px; 
+      }
+      #stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      
+      #stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100%;
       }
     
       section img#moon{
@@ -317,47 +425,46 @@ a
       }
     
       #text {
-        right: -0px; /* Adjust the right position */
-        font-size: 5vw; /* Adjust the font size */
-        transform: translateY(30px); /* Adjust the vertical position */
+        right: -0px;
+        font-size: 5vw;
+        transform: translateY(30px); 
       }
     
       #btn {
-        /* Adjust the styles for the button */
         font-size: 1em;
-        transform: translateY(100px); /* Adjust the vertical position */
+        transform: translateY(100px); 
       }
       .sec {
-        padding: 50px; /* Reduce the padding */
+        padding: 50px; 
       }
 
       .sec pre {
-        font-size: 2em; /* Adjust the font size for the pre tag */
+        font-size: 2em; 
       }
 
       .lottie-container {
-        margin-top: 20px; /* Add some space between pre and Lottie animation */
-        /* width: 50px; */
+        margin-top: 20px; 
+        
         width: 480px;
          height: 480px;
 
       }
       .content {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items vertically */
+        flex-direction: column; 
+        align-items: center; 
     }
    
 
     p {
-        font-size: 2em; /* Adjust the font size as needed */
-        margin: 20px 0; /* Add some margin for spacing */
+        font-size: 2em; 
+        margin: 20px 0; 
        
-        text-align: center; /* Center the text */
+        text-align: center; 
     }
 
     .lottie-container {
-        margin-top: 20px; /* Add margin to separate from <pre> */
-        /* Any other styles you need for the Lottie animation container */
+        margin-top: 20px; 
+        
     }
     .lottie-player{
         width: 50px; height: 480px
@@ -393,14 +500,14 @@ a
       }
       button#closeMenu {
         display: inline;
-        background-color: #ccc; /* Grey background color */
-        color: #fff; /* White text color */
+        background-color: #ccc; 
+        color: #fff; 
         border: none;
-        padding: 5px 10px; /* Adjust padding as needed */
-        border-radius: 50%; /* Round the button */
+        padding: 5px 10px; 
+        border-radius: 50%; 
         position: absolute;
-        top: 10px; /* Adjust top position to position it vertically */
-        right: 10px; /* Adjust right position to position it horizontally */
+        top: 10px; 
+        right: 10px;
         cursor: pointer;
       }
 
@@ -412,10 +519,7 @@ a
         flex-direction: column;
         position: absolute;
         top: 0;
-
-        /* left: 0; */
         right: 0;
-        /* background-color: rgba(255, 255, 255, 0.8); */
         padding: 10px;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -435,7 +539,7 @@ a
         border-radius: 5px;
     }
     section {
-        padding: 50px; /* Reduce the padding */
+        padding: 50px;
       }
     
       section img#moon{
@@ -445,7 +549,7 @@ a
         top: 150px;
       }
       section img#mountains_behind {
-        top: 120px;
+        top: 250px;
       }
       
     
@@ -470,7 +574,7 @@ a
         white-space: nowrap;
         font-size: 10vw;
         z-index: -1;
-        animation: fadeIn 3s ease-in-out; /* Apply the animation */
+        animation: fadeIn 3s ease-in-out;
         opacity: 1;
         transition: opacity 0.3s;
     }
@@ -483,55 +587,52 @@ a
         left: 0;
         width: 100%;
         height: 100%;
-        overflow: hidden; /* Add overflow: hidden to hide overflowing content */
+        overflow: hidden;
       }
       
       #stars {
         position: absolute;
         top: 0;
         left: 0;
-        max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+        max-width: 100%;
       }
       
     #lottie{
         width: 80%;
     }
       #btn {
-        /* Adjust the styles for the button */
         font-size: 1em;
-        transform: translateY(100px); /* Adjust the vertical position */
+        transform: translateY(100px);
       }
       .sec {
-        padding: 50px; /* Reduce the padding */
+        padding: 50px;
       }
 
       .sec pre {
-        font-size: 2em; /* Adjust the font size for the pre tag */
+        font-size: 2em;
       }
 
       .lottie-container {
-        margin-top: 20px; /* Add some space between pre and Lottie animation */
-        /* width: 50px; */
+        margin-top: 20px;
         width: 480px;
          height: 480px;
 
       }
       .content {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items vertically */
+        flex-direction: column;
+        align-items: center;
     }
    
 
     p {
-        font-size: 2em; /* Adjust the font size as needed */
-        margin: 20px 0; /* Add some margin for spacing */
+        font-size: 2em;
+        margin: 20px 0;
        
-        text-align: center; /* Center the text */
+        text-align: center;
     }
 
     .lottie-container {
-        margin-top: 20px; /* Add margin to separate from <pre> */
-        /* Any other styles you need for the Lottie animation container */
+        margin-top: 20px;
     }
     .lottie-player{
         width: 50px; height: 480px
@@ -567,14 +668,14 @@ a
       }
       button#closeMenu {
         display: inline;
-        background-color: #ccc; /* Grey background color */
-        color: #fff; /* White text color */
+        background-color: #ccc; 
+        color: #fff;
         border: none;
-        padding: 5px 10px; /* Adjust padding as needed */
-        border-radius: 50%; /* Round the button */
+        padding: 5px 10px;
+        border-radius: 50%;
         position: absolute;
-        top: 10px; /* Adjust top position to position it vertically */
-        right: 10px; /* Adjust right position to position it horizontally */
+        top: 10px;
+        right: 10px; 
         cursor: pointer;
       }
 
@@ -586,10 +687,7 @@ a
         flex-direction: column;
         position: absolute;
         top: 0;
-
-        /* left: 0; */
         right: 0;
-        /* background-color: rgba(255, 255, 255, 0.8); */
         padding: 10px;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -609,17 +707,176 @@ a
         border-radius: 5px;
     }
     section {
-        padding: 50px; /* Reduce the padding */
+        padding: 50px;
+      }
+    
+      section img#moon{
+        top: 50px;
+      }
+      section img#mountains_front{
+        top: 150px;
+      }
+      section img#mountains_behind {
+        top: 250px;
+      }
+      
+    
+      @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    #text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        white-space: nowrap;
+        font-size: 15vw;
+        z-index: -1;
+        animation: fadeIn 3s ease-in-out; 
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+    
+    
+      
+      #stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; 
+      }
+      
+      #stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100%; 
+      }
+      
+    #lottie{
+        width: 200px;
+        height: 200px;
+    }
+      #btn {
+        
+        font-size: 1em;
+        transform: translateY(100px); 
+      }
+      .sec {
+        padding: 50px; 
+      }
+
+      .sec pre {
+        font-size: 2em; 
+      }
+
+      .content {
+        flex-direction: column; 
+        align-items: center; 
+    }
+   
+
+    p {
+        font-size: 2em; 
+        margin: 20px 0; 
+       
+        text-align: center; 
+    }
+
+     
+}
+
+
+@media(max-width: 270px) {
+    header{
+    padding: 10px 10px;
+    }
+    
+    header .logo {
+        font-size: 1em;
+    }
+    .logo svg {
+        margin-right: 10px;
+        width: 14px;    
+      }
+    header .menu-toggle {
+        display: block;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 6px 15px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+    }
+    .menu.hidden {
+        display: none;
+      }
+      button#closeMenu {
+        display: inline;
+        background-color: #ccc; 
+        color: #fff; 
+        border: none;
+        padding: 5px 10px; 
+        border-radius: 50%; 
+        position: absolute;
+        top: 10px; 
+        right: 10px; 
+        cursor: pointer;
+      }
+
+
+    header ul {
+        display: none;
+        width: 100vw;
+        background-color:#2b1452e1;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+
+        
+        right: 0;
+        
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+    }
+
+    header ul.active {
+        display: flex;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    header ul li a {
+        padding: 8px 15px;
+        border-radius: 5px;
+    }
+    section {
+        padding: 50px; 
       }
     
       section img#moon{
         top: 30px;
       }
       section img#mountains_front{
-        top: 100px;
+        top: 150px;
       }
       section img#mountains_behind {
-        top: 120px;
+        top: 250px;
       }
       
     
@@ -644,7 +901,7 @@ a
         white-space: nowrap;
         font-size: 15vw;
         z-index: -1;
-        animation: fadeIn 3s ease-in-out; /* Apply the animation */
+        animation: fadeIn 3s ease-in-out; 
         opacity: 1;
         transition: opacity 0.3s;
     }
@@ -657,14 +914,14 @@ a
         left: 0;
         width: 100%;
         height: 100%;
-        overflow: hidden; /* Add overflow: hidden to hide overflowing content */
+        overflow: hidden; 
       }
       
       #stars {
         position: absolute;
         top: 0;
         left: 0;
-        max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+        max-width: 100%; 
       }
       
     #lottie{
@@ -672,29 +929,29 @@ a
         height: 200px;
     }
       #btn {
-        /* Adjust the styles for the button */
+        
         font-size: 1em;
-        transform: translateY(100px); /* Adjust the vertical position */
+        transform: translateY(100px); 
       }
       .sec {
-        padding: 50px; /* Reduce the padding */
+        padding: 50px; 
       }
 
       .sec pre {
-        font-size: 2em; /* Adjust the font size for the pre tag */
+        font-size: 2em; 
       }
 
       .content {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items vertically */
+        flex-direction: column; 
+        align-items: center; 
     }
    
 
     p {
-        font-size: 2em; /* Adjust the font size as needed */
-        margin: 20px 0; /* Add some margin for spacing */
+        font-size: 2em; 
+        margin: 20px 0; 
        
-        text-align: center; /* Center the text */
+        text-align: center; 
     }
 
      
