@@ -11,8 +11,7 @@ body
 {
     min-height: 115vh;
     background: linear-gradient(#2b1055,#7597de);
-    overflow-x: hidden;
-   
+    overflow-x: hidden;  
 }
 header
 {
@@ -112,6 +111,10 @@ section img
     object-fit: cover;
     pointer-events: none;
 }
+#stars{
+    overflow-x: hidden;
+    max-width: 100vw;
+}
 section img#moon
 {
     mix-blend-mode: screen;
@@ -210,14 +213,14 @@ video::-webkit-media-controls {
     background-color: #fff;
     animation: slide 5s ease-in-out ;
   }
-  .lottie-container {
+  #lottie {
     flex: 1;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
     margin-left: 10%;
 }
 
-.lottie-container:hover {
+#lottie:hover {
     transform: scale(1.2); 
 }
 a
@@ -233,7 +236,7 @@ a
 
 /* Your existing CSS styles */
 
-@media(max-width: 932px) {
+@media(max-width: 1070px) {
     header{
     padding: 30px 50px;
     }
@@ -303,15 +306,19 @@ a
         padding: 50px; /* Reduce the padding */
       }
     
-      section img#moon,
-      section img#mountains_front,
+      section img#moon{
+        top: 30px;
+      }
+      section img#mountains_front{
+        top: 150px;
+      }
       section img#mountains_behind {
-        top: 100px;
+        top: 220px;
       }
     
       #text {
-        right: -350px; /* Adjust the right position */
-        font-size: 7.5vw; /* Adjust the font size */
+        right: -0px; /* Adjust the right position */
+        font-size: 5vw; /* Adjust the font size */
         transform: translateY(30px); /* Adjust the vertical position */
       }
     
@@ -361,8 +368,346 @@ a
 }
 
 
+@media(max-width: 847px) {
+    header{
+    padding: 10px 10px;
+    }
+    
+    header .logo {
+        font-size: 1em;
+    }
+    .logo svg {
+        margin-right: 10px;
+        width: 14px;    
+      }
+    header .menu-toggle {
+        display: block;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 6px 15px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+    }
+    .menu.hidden {
+        display: none;
+      }
+      button#closeMenu {
+        display: inline;
+        background-color: #ccc; /* Grey background color */
+        color: #fff; /* White text color */
+        border: none;
+        padding: 5px 10px; /* Adjust padding as needed */
+        border-radius: 50%; /* Round the button */
+        position: absolute;
+        top: 10px; /* Adjust top position to position it vertically */
+        right: 10px; /* Adjust right position to position it horizontally */
+        cursor: pointer;
+      }
+
+
+    header ul {
+        display: none;
+        width: 100vw;
+        background-color:#2b1452e1;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+
+        /* left: 0; */
+        right: 0;
+        /* background-color: rgba(255, 255, 255, 0.8); */
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+    }
+
+    header ul.active {
+        display: flex;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    header ul li a {
+        padding: 8px 15px;
+        border-radius: 5px;
+    }
+    section {
+        padding: 50px; /* Reduce the padding */
+      }
+    
+      section img#moon{
+        top: 30px;
+      }
+      section img#mountains_front{
+        top: 150px;
+      }
+      section img#mountains_behind {
+        top: 120px;
+      }
+      
+    
+      @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    #text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        color: white;
+        white-space: nowrap;
+        font-size: 10vw;
+        z-index: -1;
+        animation: fadeIn 3s ease-in-out; /* Apply the animation */
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+    
+    
+      
+      #stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* Add overflow: hidden to hide overflowing content */
+      }
+      
+      #stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+      }
+      
+    #lottie{
+        width: 80%;
+    }
+      #btn {
+        /* Adjust the styles for the button */
+        font-size: 1em;
+        transform: translateY(100px); /* Adjust the vertical position */
+      }
+      .sec {
+        padding: 50px; /* Reduce the padding */
+      }
+
+      .sec pre {
+        font-size: 2em; /* Adjust the font size for the pre tag */
+      }
+
+      .lottie-container {
+        margin-top: 20px; /* Add some space between pre and Lottie animation */
+        /* width: 50px; */
+        width: 480px;
+         height: 480px;
+
+      }
+      .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items vertically */
+    }
+   
+
+    p {
+        font-size: 2em; /* Adjust the font size as needed */
+        margin: 20px 0; /* Add some margin for spacing */
+       
+        text-align: center; /* Center the text */
+    }
+
+    .lottie-container {
+        margin-top: 20px; /* Add margin to separate from <pre> */
+        /* Any other styles you need for the Lottie animation container */
+    }
+    .lottie-player{
+        width: 50px; height: 480px
+    } 
+}
 
 
 
 
 
+@media(max-width: 390px) {
+    header{
+    padding: 10px 10px;
+    }
+    
+    header .logo {
+        font-size: 1em;
+    }
+    .logo svg {
+        margin-right: 10px;
+        width: 14px;    
+      }
+    header .menu-toggle {
+        display: block;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 6px 15px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+    }
+    .menu.hidden {
+        display: none;
+      }
+      button#closeMenu {
+        display: inline;
+        background-color: #ccc; /* Grey background color */
+        color: #fff; /* White text color */
+        border: none;
+        padding: 5px 10px; /* Adjust padding as needed */
+        border-radius: 50%; /* Round the button */
+        position: absolute;
+        top: 10px; /* Adjust top position to position it vertically */
+        right: 10px; /* Adjust right position to position it horizontally */
+        cursor: pointer;
+      }
+
+
+    header ul {
+        display: none;
+        width: 100vw;
+        background-color:#2b1452e1;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+
+        /* left: 0; */
+        right: 0;
+        /* background-color: rgba(255, 255, 255, 0.8); */
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+    }
+
+    header ul.active {
+        display: flex;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    header ul li a {
+        padding: 8px 15px;
+        border-radius: 5px;
+    }
+    section {
+        padding: 50px; /* Reduce the padding */
+      }
+    
+      section img#moon{
+        top: 30px;
+      }
+      section img#mountains_front{
+        top: 100px;
+      }
+      section img#mountains_behind {
+        top: 120px;
+      }
+      
+    
+      @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    #text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -120%);
+        color: white;
+        white-space: nowrap;
+        font-size: 15vw;
+        z-index: -1;
+        animation: fadeIn 3s ease-in-out; /* Apply the animation */
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+    
+    
+      
+      #stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* Add overflow: hidden to hide overflowing content */
+      }
+      
+      #stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+      }
+      
+    #lottie{
+        width: 80%;
+    }
+      #btn {
+        /* Adjust the styles for the button */
+        font-size: 1em;
+        transform: translateY(100px); /* Adjust the vertical position */
+      }
+      .sec {
+        padding: 50px; /* Reduce the padding */
+      }
+
+      .sec pre {
+        font-size: 2em; /* Adjust the font size for the pre tag */
+      }
+
+      .lottie-container {
+        margin-top: 20px; /* Add some space between pre and Lottie animation */
+        /* width: 50px; */
+        width: 480px;
+         height: 480px;
+
+      }
+      .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items vertically */
+    }
+   
+
+    p {
+        font-size: 2em; /* Adjust the font size as needed */
+        margin: 20px 0; /* Add some margin for spacing */
+       
+        text-align: center; /* Center the text */
+    }
+
+    .lottie-container {
+        margin-top: 20px; /* Add margin to separate from <pre> */
+        /* Any other styles you need for the Lottie animation container */
+    }
+    .lottie-player{
+        width: 50px; height: 480px
+    } 
+}

@@ -37,7 +37,7 @@
     </div>
       <ul class="menu">
         <button id="closeMenu">X</button>
-        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#">Login</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Contact</a></li>
@@ -47,10 +47,13 @@
     
 
     <section >
-      <img src="Images/StarsSky.png" id="stars" />
+      <div id="stars-container">
+        <img src="Images/StarsSky.png" id="stars" />
+      </div>
+      
       <img src="Images/Moonc.png" id="moon" />
       <img src="Images/Back_mountains_croped.png" id="mountains_behind" />
-      <h2 id="text">Moon Light</h2>
+      <h2 id="text">Welcome</h2>
       <a href="#sec" id="btn">Explore</a>
       <img src="Images/Land - front.png" id="mountains_front" />
     </section>
@@ -73,20 +76,20 @@
     drop me a line.
 </p>
 
-        <div class="lottie-container">
+       
           <lottie-player
             src="Images\coder.json"
             background="transparent"
             speed="1"
-            style="width: 480px; height: 480px"
+            style="width: 390px; height: 390px"
             direction="1"
             mode="normal"
             loop
             autoplay
+            id="lottie"
           ></lottie-player>
         </div>
       </div>
-    </div>
 
  
 
@@ -107,7 +110,7 @@
         }
         stars.style.left = value * 0.25 + "px";
         if (value < 300) {
-          mountains_behind.style.top = (value + 800) * 0.3 + "px";
+          mountains_behind.style.top = (value + 850) * 0.3 + "px";
         }
         text.style.marginRight = value * 4 + "px";
         text.style.marginTop = value * 1.5 + "px";
@@ -120,15 +123,30 @@
   const menuToggle = document.querySelector(".menu-toggle");
   
   menuToggle.addEventListener("click", function () {
-      navList.classList.toggle("active");
+    navList.classList.toggle("active");
   });
 
   const closeMenuButton = document.getElementById("closeMenu");
   closeMenuButton.addEventListener("click", function () {
     navList.classList.remove("active");
   });
-});
 
+  // Select all list items
+  const listItems = document.querySelectorAll(".menu li");
+
+  // Add a click event listener to each list item
+  listItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      // Remove the "active" class from all list items
+      listItems.forEach(function (li) {
+        li.classList.remove("active");
+      });
+
+      // Add the "active" class to the clicked list item
+      item.classList.add("active");
+    });
+  });
+});
 
 
     </script>
