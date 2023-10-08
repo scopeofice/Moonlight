@@ -37,14 +37,12 @@
     </div>
       <ul class="menu">
         <button id="closeMenu">X</button>
-        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="index.html">Home</a></li>
         <li><a href="login.html">Login</a></li>
-        <li><a href="#">About us</a></li>
+        <li><a href="#" onclick="toggleAboutUs()">About us</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </header>
-
-    
 
     <section >
       <div id="stars-container">
@@ -57,7 +55,6 @@
       <a href="#sec" id="btn">Explore</a>
       <img src="Images/Land - front.png" id="mountains_front" />
     </section>
-
     <div class="sec" id="sec">
       <h2>Hy there</h2>
       <hr />
@@ -172,8 +169,14 @@
     });
   });
 });
-
-
+function toggleAboutUs() {
+    var aboutUsSection = document.getElementById("aboutUsSection");
+    if (aboutUsSection.style.display === "none" || aboutUsSection.style.display === "") {
+        aboutUsSection.style.display = "block";
+    } else {
+        aboutUsSection.style.display = "none";
+    }
+}
     </script>
   </body>
 </html>

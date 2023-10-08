@@ -28,7 +28,7 @@
           <ul class="menu" style="margin-right: 10px;">
             <button id="closeMenu">X</button>
             <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li class="active"><a href="login.html">Login</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
@@ -39,13 +39,13 @@
             <div class="title">
                 Login Form
             </div>
-            <form action="#">
+            <form id="loginForm" action="/login" method="POST">
                 <div class="field">
-                    <input type="text" required>
+                    <input type="text" id="email" required>
                     <label>Email Address</label>
                 </div>
                 <div class="field">
-                    <input type="password" required>
+                    <input type="password" id="password" required>
                     <label>Password</label>
                 </div>
                 <div class="content">
@@ -61,7 +61,7 @@
                     <input type="submit" value="Login">
                 </div>
                 <div class="signup-link">
-                    Not a member? <a href="#">Signup now</a>
+                    Not a member? <a href="signup.html">Signup now</a>
                 </div>
             </form>
         </div>
@@ -121,6 +121,55 @@
       item.classList.add("active");
     });
   });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Create an object to hold the user's credentials
+        const credentials = {
+            email: email,
+            password: password
+        };
+
+        // Send a POST request to your server for authentication
+        fetch("http://localhost:3002/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(credentials)
+        })
+        .then(response => {
+            if (response.status === 200) {
+                // Authentication successful
+                return response.json();
+            } else if (response.status === 401) {
+                // Invalid credentials
+                throw new Error("Invalid credentials");
+            } else {
+                throw new Error("Login failed");
+            }
+        })
+        .then(data => {
+            // Redirect the user to their homepage with user data
+            // window.location.href = "/user.html";
+            // alert(data.user.full_name);
+            // window.location.href = `/user.html?fullName=${data.user.full_name}`;
+            const fullName = data.user.full_name;
+            localStorage.setItem("fullName", fullName);
+            window.location.href = "/user.html";
+        })
+        .catch(error => {
+            console.error("Login error: " + error.message);
+            // Handle login error (e.g., display an error message)
+        });
+    });
 });
 
     </script>
