@@ -135,7 +135,7 @@ body{
   }
   @media(max-width: 480px) {
     .wrapper{
-        width: 80%;
+        width: 95%;
     }
   }
 
